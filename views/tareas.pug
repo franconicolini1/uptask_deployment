@@ -1,0 +1,36 @@
+extends layout  
+
+block contenido
+    .contenedor
+        h1.contenedor__titulo #{nombrePagina} - #{proyecto.nombre}
+        
+        form(class="contenedor__form" method="POST" action=`/proyectos/${proyecto.url}` autocomplete="off")
+            label(class="contenedor__form__nombre-del-proyecto", for="tarea") Tarea: 
+            input(id="nombre" name="tarea" type="text" placeholder="Nombre Tarea") 
+            input(id="submit" type="submit" value="AGREGAR")
+
+        .listado-pendientes     
+            ul.listado-pendientes__menu
+                if tareas.length 
+                    each tarea in tareas 
+                        li.tarea(data-tarea=`${tarea.id}`)
+                            p= `${tarea.tarea}`
+                            .contenedor-icono 
+                                if tarea.estado
+                                    i.far.fa-check-circle.check
+                                else 
+                                    i.far.fa-check-circle
+                                i.fas.fa-trash
+                else 
+                    p.sin-tareas No hay tareas en este Proyecto.
+        
+        .avance
+            h2.avance__titulo Avance del Proyecto  
+            .barra-avance
+                .porcentaje
+
+        .contenedor-acciones 
+            a(href=`/proyecto/editar/${proyecto.id}` class="contenedor-acciones__boton-editar") Editar Proyecto     
+            button(data-proyecto-url=`${proyecto.url}`  id="eliminar-proyecto" type="button" class="contenedor-acciones__boton-eliminar") Eliminar Proyecto
+
+

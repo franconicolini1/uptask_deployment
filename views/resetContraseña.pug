@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+html(lang="es")
+    head
+        include partials/header
+    body.login
+        .login__contenedor
+            .login__contenedor__contenedor
+                h1.login__contenedor__titulo #{nombrePagina}
+                p.login__contenedor__subtitulo Coloca tu Nueva Contraseña
+
+                form(class="login__contenedor__form" method="POST") 
+                    .login__contenedor__form__contenedor
+                        label.crear-cuenta-labels(for="reestablecer-password") Contraseña:
+                        input.crear-cuenta-email(type="password" id="reestablecer-password" name="password" placeholder="Contraseña" autocomplete="off")
+                    .login__contenedor__form__submit 
+                        input(type="submit" id="login-submit" class="login-submit" value="Restablecer")

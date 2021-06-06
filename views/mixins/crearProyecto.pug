@@ -1,0 +1,6 @@
+mixin crearProyecto(proyecto = {})
+
+    form(class="contenedor__form" action=`/nuevo-proyecto/${proyecto.id || ''}` method="POST" autocomplete="off")
+        label(class="contenedor__form__nombre-del-proyecto", for="nombre") Nombre del Proyecto: 
+        input(id="nombre" name="nombre" type="text" value=`${proyecto.nombre ? proyecto.nombre : ''}` placeholder="Nombre Proyecto") 
+        input(id="submit" type="submit" value=`${proyecto.nombre ? 'GUARDAR' : 'AGREGAR'}`)

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html(lang="es")
+    head
+        include partials/header
+    body 
+        header.header
+            nav.header__nav
+                a.header__nav__enlace(href="/")
+                    h1.header__nav__enlace__titulo UPTASK
+                a(class="header__nav__cerrar-sesion", href="/cerrar-sesion") Cerrar Sesión
+                i(class="fas fa-bars" id="menu-icon")
+        main.main
+            aside.main__aside
+                a(class="boton", href="/nuevo-proyecto")
+                    button.main__aside__nuevo-proyecto NUEVO PROYECTO  
+                    span.more +
+                h2.main__aside__proyectos Proyectos
+                .main__aside_contenedor-proyectos
+                    ul.main__aside__options
+                        if proyectos.length
+                            each proyecto in proyectos 
+                                a(href=`/proyectos/${proyecto.url}`)
+                                    li #{proyecto.nombre}
+                a(href="/cerrar-sesion" class="main__aside__cerrar-sesion") Cerrar Sesión
+            block contenido
+
+            //- pre #{vardump(proyectos)} Este es un helper que muestra resultado de las consultas.
+
+        script(src='/dist/bundle.js' type="text/javascript")

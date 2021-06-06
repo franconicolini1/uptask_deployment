@@ -1,0 +1,137 @@
+:root {
+    --amarillo: rgb(255, 213, 0);
+    --amarillo-hover: rgb(233, 211, 15);
+    --rojo: rgb(255, 0, 0);
+    --rojo-hover: rgb(219, 4, 4);
+    --gris-tareas: #ebebeb;
+    --gris-tareas-border: #cccccc;
+    --check: #17A589;
+    --trash: #ff1606;
+}
+
+/* Contenedor Acciones */
+.contenedor-acciones {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Boton Editar */
+.contenedor-acciones__boton-editar {
+    text-decoration: none;
+    padding: .8rem 2rem;
+    background: var(--amarillo);
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-right: 10px;
+}
+
+.contenedor-acciones__boton-editar:hover {
+    background-color: var(--amarillo-hover);
+}
+
+/* Boton Eliminar */
+.contenedor-acciones__boton-eliminar {
+    text-decoration: none;
+    padding: .8rem 1.7rem;
+    background: var(--rojo);
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.contenedor-acciones__boton-eliminar:hover {
+    background: var(--rojo-hover);
+}
+
+/* Botones en active */
+.contenedor-acciones__boton-editar:active,
+.contenedor-acciones__boton-eliminar:active {
+    transform: translateY(2px);
+}
+
+/* Tareas Pendientes */
+.listado-pendientes {
+    margin: 20px 0;
+    background: var(--gris-tareas);
+    border: 2px solid var(--gris-tareas-border);
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.listado-pendientes__menu {
+    width: 90%;
+}
+
+.tarea {
+    list-style: none;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gris-tareas-border);
+    margin-bottom: 4px;
+}
+
+.sin-tareas {
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Iconos */
+.contenedor-icono {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px
+}
+
+.check {
+    color: var(--check);
+}
+
+.fa-trash {
+    color: var(--trash);
+}
+
+.fa-check-circle,
+.fa-trash {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+    .listado-pendientes,
+    .listado-pendientes__menu,
+    .contenedor-acciones {
+        width: 90%;
+    }
+
+    .contenedor-acciones__boton-editar,
+    .contenedor-acciones__boton-eliminar {
+        width: 45%;
+    }
+
+    .fa-check-circle {
+        margin-right: 8px;
+    }
+}

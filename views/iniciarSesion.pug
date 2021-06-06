@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html(lang="es")
+    head
+        include partials/header
+    body.login
+        .login__contenedor
+            .login__contenedor__contenedor
+                h1.login__contenedor__titulo Iniciar Sesión en UpTask
+                
+                if locals.mensajes 
+                    .alertas
+                        each categoria in Object.keys(locals.mensajes)
+                            each error in mensajes[categoria]
+                                .alerta(class=`${categoria}`)
+                                    p #{error}
+
+                form(class="login__contenedor__form" action="/iniciar-sesion" method="POST") 
+                    .login__contenedor__form__contenedor
+                        label.crear-cuenta-labels(for="login-email") E-mail:
+                        input.crear-cuenta-email(type="email" id="login-email" name="email" placeholder="example@email.com" autocomplete="off" value=`${email ? email : ''}`)
+                    .login__contenedor__form__contenedor
+                        label.crear-cuenta-labels(for="login-password") Contraseña: 
+                        input.crear-cuenta-password(type="password" id="login-password" name="password" placeholder="Contraseña" autocomplete="off" value=`${password ? password : ''}`)
+                    .login__contenedor__form__submit 
+                        input(type="submit" id="login-submit" class="login-submit" value="Iniciar Sesión")
+                    .login__contenedor__form__contenedor-iniciar-sesion
+                        a.login__sin-cuenta(href="/crear-cuenta") ¿Aún no tienes cuenta? Crea una gratis
+                        a.login__reestablecer(href="/restablecer") ¿Olvidaste tu Contraseña?
+                    
