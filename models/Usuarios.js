@@ -21,7 +21,6 @@ const Usuarios = db.define('usuarios', {
             }
         },
         unique: {
-            args: true,
             msg: 'Usuario Ya Registrado'
         }
     },
