@@ -47,6 +47,7 @@ if (tareas) {
                                     res.data,
                                     'success'
                                 );
+
                                 actualizarAvance();
                             }
                         });

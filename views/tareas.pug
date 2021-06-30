@@ -3,6 +3,10 @@ extends layout
 block contenido
     .contenedor
         h1.contenedor__titulo #{nombrePagina} - #{proyecto.nombre}
+
+        if errores 
+            each error in errores
+                .alerta #{error.texto}
         
         form(class="contenedor__form" method="POST" action=`/proyectos/${proyecto.url}` autocomplete="off")
             label(class="contenedor__form__nombre-del-proyecto", for="tarea") Tarea: 

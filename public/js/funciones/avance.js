@@ -14,7 +14,7 @@ export const actualizarAvance = () => {
         if (avance === 100) {
             Swal.fire (
                 'Completaste el Proyecto',
-                'Felecidades, has terminado tus Tareas',
+                'Felicidades, has terminado tus Tareas',
                 'success'
             );
         }

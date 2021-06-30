@@ -13,7 +13,7 @@ exports.proyectosHome = async (req, res) => {
 
 exports.formularioProyecto = async (req, res) => {
     const usuarioId = res.locals.usuario.id;
-    const proyectos = await Proyectos.findAll();
+    const proyectos = await Proyectos.findAll({where: {usuarioId}});
 
     res.render('nuevoProyecto', {
         nombrePagina: 'Nuevo Proyecto',
@@ -23,7 +23,7 @@ exports.formularioProyecto = async (req, res) => {
 
 exports.nuevoProyecto = async (req, res) => {
     const usuarioId = res.locals.usuario.id;
-    const proyectos = await Proyectos.findAll();
+    const proyectos = await Proyectos.findAll({where: {usuarioId}});
     const nombre = req.body.nombre;
     let errores = [];
 
@@ -109,7 +109,7 @@ exports.actualizarProyecto = async (req, res) => {
 
     if (errores.length > 0 ) {
         res.render('nuevoProyecto', {
-            nombrePagina : 'Nuevo Proyecto',
+            nombrePagina: 'Nuevo Proyecto',
             errores,
             proyectos 
         });
