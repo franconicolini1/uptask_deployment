@@ -4,6 +4,10 @@ import { actualizarAvance } from '../funciones/avance';
 
 const tareas = document.querySelector('.listado-pendientes');
 
+const recargar = () => {
+    document.location.reload();
+}
+
 if (tareas) {
     tareas.addEventListener('click', e => {
         if (e.target.classList.contains('fa-check-circle')) {
@@ -41,14 +45,16 @@ if (tareas) {
                         .then(function(res) {
                             if (res.status === 200) {
                                 tareaHTML.parentElement.removeChild(tareaHTML);
-
+                                
+                                actualizarAvance();
+                                setTimeout(recargar, 1250);
+                                
                                 Swal.fire(
                                     'Tarea Eliminada',
                                     res.data,
                                     'success'
                                 );
 
-                                actualizarAvance();
                             }
                         });
                 }
