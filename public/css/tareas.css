@@ -9,6 +9,10 @@
     --trash: #ff1606;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 /* Contenedor Acciones */
 .contenedor-acciones {
     width: 50%;

@@ -10,6 +10,9 @@
     --alerta-background: rgb(246, 167, 180);
 }
 
+input {
+    -webkit-appearance: none;
+}
 
 /* Nav */
 .header__nav {

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 .contenedor {
     width: 100%;
     height: calc(100vh - 70px);

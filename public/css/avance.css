@@ -1,3 +1,7 @@
+input {
+    -webkit-appearance: none;
+}
+
 .avance {
     width: 50%;
     height: 10%;

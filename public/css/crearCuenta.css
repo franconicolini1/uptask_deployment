@@ -6,6 +6,10 @@
     --contraseña-correcta-background: #60e488;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 .login {
     background: var(--fondo);
 }
